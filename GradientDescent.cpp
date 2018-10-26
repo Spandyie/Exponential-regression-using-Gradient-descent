@@ -1,3 +1,20 @@
+
+#include <stdio.h>
+#include <tchar.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <string>
+#include <fstream>
+#include <regex>
+#include <random>
+#include <utility>
+#include <numeric>
+#include <functional>
+#include <unordered_map>
+#include <assert.h>
+#include <boost/algorithm/string.hpp>
 using namespace std;
 
 class CSVReader {
@@ -8,9 +25,7 @@ private:
 public:
 	CSVReader(string fileName) : fileName(fileName) 
 	{ }
-
 	vector<vector<double>> getData();
-
 };
 
 vector<vector<double>> CSVReader::getData() {
@@ -25,7 +40,7 @@ vector<vector<double>> CSVReader::getData() {
 		// split the string
 		boost::algorithm::split(line_of_file, line, boost::is_any_of(delimiter));
 		vector<double> line_of_file_double;		
-        // convert the string of double into double
+        	// convert the string of double into double
 		transform(line_of_file.begin(), line_of_file.end(), inserter(line_of_file_double, line_of_file_double.begin()), [](const string& s) { return stod(s);});
 		data_double.push_back(line_of_file_double);					
 	}
@@ -133,15 +148,13 @@ void log_transform(vector<double>& y) {
 	transform(y.begin(), y.end(), y.begin(), [](const double& s){return log(s);});
 }
 
-int main()
-{ 
-
+int main(){
 	CSVReader reader("Input.csv");
 	const auto output = reader.getData();
 	
 	vector<double> x;
 	vector<double> y;
-	for (const auto& val : output) {
+	for (const auto& val : output){
 		x.emplace_back(val[0]);
 		y.emplace_back(val[1]);
 	}
