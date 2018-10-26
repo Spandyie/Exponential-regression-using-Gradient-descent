@@ -148,6 +148,16 @@ void log_transform(vector<double>& y) {
 	transform(y.begin(), y.end(), y.begin(), [](const double& s){return log(s);});
 }
 
+
+int writeFile(const pair<double, double>& coefficient) {
+	ofstream write_my_file;
+	write_my_file.open("output.txt");
+	write_my_file << coefficient.first << "\n";
+	write_my_file << coefficient.second << "\n";
+	write_my_file.close();
+	return 0;
+}
+
 int main(){
 	CSVReader reader("Input.csv");
 	const auto output = reader.getData();
