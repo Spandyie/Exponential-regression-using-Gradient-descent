@@ -1,6 +1,9 @@
 # Exponential-regression-using-Gradient-descent
 This repository contains the code that does exponential regression using gradient descent optimizer. 
-Consider the exponential regression, $y = a e^{bx}$, after the log-transformation the equation becomes $log(y) = log(a) + bx$.
+Consider the exponential regression, 
+<a href="https://www.codecogs.com/eqnedit.php?latex=$y&space;=&space;a&space;e^{bx}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$y&space;=&space;a&space;e^{bx}$" title="$y = a e^{bx}$" /></a>,
+
+after the log-transformation the equation becomes <a href="https://www.codecogs.com/eqnedit.php?latex=$log(y)&space;=&space;log(a)&space;&plus;&space;bx$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$log(y)&space;=&space;log(a)&space;&plus;&space;bx$" title="$log(y) = log(a) + bx$" /></a>.
 Gradient Descent algorithm:
 
 Step 1: Initialize the weights(loga & b) with random values and calculate Error (SSE)
